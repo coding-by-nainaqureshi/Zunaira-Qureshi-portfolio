@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zunaira Qureshi | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090d16',
+                        cardBg: '#111827',
+                        accentCyan: '#06b6d4',
+                        accentViolet: '#8b5cf6',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090d16;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .font-code {
+            font-family: 'Fira Code', monospace;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.2);
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090d16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 antialiased selection:bg-cyan-500 selection:text-black">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#090d16]/80 backdrop-blur-md border-b border-gray-800">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="text-2xl font-extrabold tracking-wider text-white group">
+                ZQ<span class="text-cyan-400 group-hover:animate-pulse">.</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <ul class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <li><a href="#home" class="hover:text-cyan-400 transition-colors">Home</a></li>
+                <li><a href="#about" class="hover:text-cyan-400 transition-colors">About</a></li>
+                <li><a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a></li>
+                <li><a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a></li>
+                <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a></li>
+                <li>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all transform hover:-translate-y-0.5">
+                        Let's Talk
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" aria-label="Toggle menu" class="md:hidden text-2xl text-gray-300 hover:text-cyan-400 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-20 left-0 w-full bg-[#090d16]/95 backdrop-blur-xl border-b border-gray-800 px-6 py-6 transition-all">
+            <ul class="flex flex-col gap-4 font-medium text-lg">
+                <li><a href="#home" class="mobile-link block py-2 hover:text-cyan-400">Home</a></li>
+                <li><a href="#about" class="mobile-link block py-2 hover:text-cyan-400">About</a></li>
+                <li><a href="#skills" class="mobile-link block py-2 hover:text-cyan-400">Skills</a></li>
+                <li><a href="#projects" class="mobile-link block py-2 hover:text-cyan-400">Projects</a></li>
+                <li><a href="#contact" class="mobile-link block py-2 hover:text-cyan-400">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="min-h-screen flex items-center justify-center pt-28 pb-16 px-6 relative overflow-hidden">
+        <!-- Background Glow Blobs -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-cyan-500/10 rounded-full filter blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-violet-600/10 rounded-full filter blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                    ASPIRING WEB DEVELOPER
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Hi, I'm <span class="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">Zunaira Qureshi</span>
+                </h1>
+                <h2 class="text-xl sm:text-2xl font-semibold text-gray-300">
+                    I turn ideas into digital web experiences.
+                </h2>
+                <p class="text-gray-400 text-base sm:text-lg max-w-xl leading-relaxed">
+                    BS Computer Science student passionate about coding, creativity, and building beautiful, responsive websites.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#projects" class="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/45 transition-all transform hover:-translate-y-1 inline-flex items-center gap-3">
+                        Explore My Work <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 rounded-xl glass-card text-gray-200 font-semibold hover:border-cyan-400/50 transition-all transform hover:-translate-y-1">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Profile Graphic Card -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="w-full max-w-md glass-card rounded-3xl p-8 relative shadow-2xl overflow-hidden border border-gray-800">
+                    <div class="absolute -top-12 -right-12 w-36 h-36 bg-cyan-500/20 rounded-full blur-2xl"></div>
+                    <div class="flex flex-col items-center text-center space-y-4 relative z-10">
+                        <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-cyan-500 to-violet-600 p-1 flex items-center justify-center shadow-xl shadow-cyan-500/20">
+                            <div class="w-full h-full bg-[#090d16] rounded-xl flex items-center justify-center text-3xl font-bold text-cyan-400">
+                                ZQ
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-white">Zunaira Qureshi</h2>
+                            <p class="text-sm text-cyan-400 font-medium">Learn • Code • Create</p>
+                        </div>
+                        <div class="w-full bg-[#060911] rounded-2xl p-4 font-code text-xs text-gray-300 border border-gray-800 text-left space-y-1 shadow-inner">
+                            <p class="text-purple-400">const <span class="text-cyan-400">dream</span> = <span class="text-green-400">"Web Developer"</span>;</p>
+                            <p class="text-purple-400">console.<span class="text-yellow-400">log</span>(dream);</p>
+                            <p class="text-gray-500">// Semester 7 BSCS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase">GET TO KNOW ME</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">About <span class="text-cyan-400">Me</span></h2>
+            </div>
+            <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 text-cyan-500/10 text-9xl font-extrabold pointer-events-none">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div class="relative z-10 space-y-6">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white leading-snug">
+                        Learning today, creating tomorrow.
+                    </h3>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                        I'm a dedicated BS Computer Science student currently in Semester 7. I am actively expanding my knowledge in modern web development, refining my technical skills, and building practical projects. My ultimate goal is to become a confident full-stack developer and create impactful, user-friendly digital experiences.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+                        <div class="p-5 rounded-2xl bg-[#090d16]/60 border border-gray-800">
+                            <h4 class="text-cyan-400 font-bold text-lg">Semester 7</h4>
+                            <p class="text-gray-400 text-sm mt-1">BS Computer Science Student</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-[#090d16]/60 border border-gray-800">
+                            <h4 class="text-violet-400 font-bold text-lg">Frontend & UI</h4>
+                            <p class="text-gray-400 text-sm mt-1">Focused on clean interactive design</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-[#090d16]/60 border border-gray-800">
+                            <h4 class="text-cyan-400 font-bold text-lg">Continuous Learner</h4>
+                            <p class="text-gray-400 text-sm mt-1">Building projects daily</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 px-6 bg-[#060911]/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase">MY TOOLKIT</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">My <span class="text-cyan-400">Skills</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl mb-4 group-hover:bg-cyan-500 group-hover:text-black transition-all">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">HTML5</h3>
+                    <p class="text-gray-400 text-sm">Semantic website structure and clean markup architecture.</p>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-12 h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-xl mb-4 group-hover:bg-violet-500 group-hover:text-white transition-all">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">CSS3</h3>
+                    <p class="text-gray-400 text-sm">Modern styling, responsive layouts, and smooth animations.</p>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-xl mb-4 group-hover:bg-yellow-500 group-hover:text-black transition-all">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">JavaScript</h3>
+                    <p class="text-gray-400 text-sm">Interactive features, DOM manipulation, and frontend logic.</p>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-4 group-hover:bg-indigo-500 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">PHP</h3>
+                    <p class="text-gray-400 text-sm">Server-side basics and dynamic backend scripting.</p>
+                </div>
+                <!-- Skill Card 5 -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Responsive Design</h3>
+                    <p class="text-gray-400 text-sm">Mobile-friendly layouts tailored for all screen sizes.</p>
+                </div>
+                <!-- Skill Card 6 -->
+                <div class="glass-card rounded-2xl p-6 transition-all duration-300 transform hover:-translate-y-2 group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center text-xl mb-4 group-hover:bg-orange-500 group-hover:text-white transition-all">
+                        <i class="fa-brands fa-git-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Git & GitHub</h3>
+                    <p class="text-gray-400 text-sm">Version control, collaborative workflows, and code hosting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase">WHAT I'VE BUILT</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">My <span class="text-cyan-400">Projects</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <article class="glass-card rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-2 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-cyan-500/10 text-cyan-400 px-4 py-2 rounded-bl-2xl font-bold text-sm">01</div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Interactive Calculator</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            A sleek, functional calculator designed and developed to practice JavaScript logic, mathematical operations, and responsive CSS styling.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 mt-6 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-cyan-400 tracking-wider">HTML · CSS · JavaScript</span>
+                        <button onclick="openProjectModal('Interactive Calculator', 'A sleek, functional calculator designed and developed to practice JavaScript logic, mathematical operations, and responsive CSS styling. Features clean button layouts and instant calculation outputs.', 'HTML · CSS · JavaScript')" class="w-9 h-9 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="glass-card rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-2 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-violet-500/10 text-violet-400 px-4 py-2 rounded-bl-2xl font-bold text-sm">02</div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-violet-400 transition-colors">Coffee Shop Website</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            A cozy café landing page featuring an artisanal menu, image gallery, customer testimonials, and smooth navigation sections.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 mt-6 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-violet-400 tracking-wider">HTML · CSS</span>
+                        <button onclick="openProjectModal('Coffee Shop Website', 'A cozy café landing page featuring an artisanal menu, image gallery, customer testimonials, and smooth navigation sections crafted with clean CSS styling.', 'HTML · CSS')" class="w-9 h-9 rounded-full bg-violet-500/10 text-violet-400 flex items-center justify-center hover:bg-violet-500 hover:text-white transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="glass-card rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 transform hover:-translate-y-2 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-cyan-500/10 text-cyan-400 px-4 py-2 rounded-bl-2xl font-bold text-sm">03</div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-hospital"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">CarePlus Hospital</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            A comprehensive hospital website concept showcasing medical departments, doctor profiles, and appointment booking forms.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/80 mt-6 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-cyan-400 tracking-wider">HTML · CSS</span>
+                        <button onclick="openProjectModal('CarePlus Hospital', 'A comprehensive hospital website concept showcasing medical departments, doctor profiles, emergency contact details, and appointment booking forms.', 'HTML · CSS')" class="w-9 h-9 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center hover:bg-cyan-500 hover:text-black transition-all">
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 bg-[#060911]/50 relative">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <p class="text-cyan-400 text-xs font-semibold tracking-widest uppercase">LET'S CONNECT</p>
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white">Let's create something <span class="text-cyan-400">amazing.</span></h2>
+            <p class="text-gray-300 text-lg max-w-xl mx-auto">Have an idea, project, or opportunity? I'd love to hear from you. Drop me a message below!</p>
+            
+            <div class="glass-card rounded-3xl p-8 sm:p-12 text-left mt-10">
+                <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-300">Your Name</label>
+                            <input type="text" id="senderName" required placeholder="Enter Your Name" class="w-full bg-[#090d16] border border-gray-800 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 transition-colors">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-gray-300">Your Email</label>
+                            <input type="email" id="senderEmail" required placeholder="Enter Your Email" class="w-full bg-[#090d16] border border-gray-800 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 transition-colors">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-300">Your Message</label>
+                        <textarea id="senderMessage" rows="5" required placeholder="Type your message here..." class="w-full bg-[#090d16] border border-gray-800 rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-bold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/45 transition-all transform hover:-translate-y-0.5">
+                        Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-gray-800 text-center space-y-4">
+        <a href="#home" class="text-2xl font-extrabold tracking-wider text-white inline-block">
+            ZQ<span class="text-cyan-400">.</span>
+        </a>
+        <p class="text-gray-400 text-sm">Designed with curiosity and built with code.</p>
+        <p class="text-gray-500 text-xs">© <span id="year"></span> Zunaira Qureshi. All rights reserved.</p>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="glass-card rounded-3xl p-8 max-w-lg w-full relative space-y-6 border border-gray-700">
+            <button onclick="closeProjectModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="modalTitle" class="text-2xl font-bold text-white"></h3>
+            <p id="modalDesc" class="text-gray-300 text-sm leading-relaxed"></p>
+            <div id="modalTech" class="text-xs font-semibold text-cyan-400"></div>
+            <button onclick="closeProjectModal()" class="w-full py-3 rounded-xl bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition-all">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden glass-card border border-cyan-500/40 px-6 py-4 rounded-2xl shadow-2xl text-white flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-cyan-400 text-lg"></i>
+        <span id="toastText" class="text-sm font-medium">Message sent successfully!</span>
+    </div>
+
+    <script>
+        // Dynamic Copyright Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Project Modal Logic
+        function openProjectModal(title, desc, tech) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDesc').textContent = desc;
+            document.getElementById('modalTech').textContent = "Technologies: " + tech;
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.getElementById('projectModal').classList.add('flex');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('projectModal').classList.remove('flex');
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+
+        // Contact Form Handling & Mailto Integration
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('senderName').value;
+            const email = document.getElementById('senderEmail').value;
+            const message = document.getElementById('senderMessage').value;
+
+            // Trigger mailto link as fallback & convenience
+            const mailtoLink = `mailto:nainaqureshi541@gmail.com?subject=Portfolio Message from ${encodeURIComponent(name)} (${encodeURIComponent(email)})&body=${encodeURIComponent(message)}`;
+            
+            showToast("Opening email client to send message...");
+            
+            setTimeout(() => {
+                window.location.href = mailtoLink;
+                document.getElementById('contactForm').reset();
+            }, 1000);
+        }
+
+        // Toast notification helper
+        function showToast(text) {
+            const toast = document.getElementById('toast');
+            const toastText = document.getElementById('toastText');
+            toastText.textContent = text;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
